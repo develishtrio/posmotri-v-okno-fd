@@ -10,10 +10,11 @@ html {
 
 .page {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   inline-size: 1200px;
@@ -31,9 +32,9 @@ html {
 }
 /* */
 .result {
-  grid-area: result;
   display: flex;
   flex-direction: column;
+  grid-area: result;
 }
 
 .result__video-container {
@@ -72,44 +73,35 @@ ol {
 .search-form {
   display: flex;
   flex-direction: row;
-  align-items: end;
   justify-content: space-between;
-  padding-top: 16px;
+  align-items: start;
 }
 
- .content__details {
+.content__details {
+  display: flex;
+  flex-direction: column;
   grid-area: details;
-  gap: 26px; 
-  width: 399px;
+  gap: 26px;
+  max-width: 399px;
   height: 534px;
 }
 
- .content__list-container {
+.content__list-container {
   position: relative;
-  display: grid; 
+  display: grid;
   gap: 30px;
-  height: 298px; 
+  height: 298px;
   overflow-y: auto;
 }
 /* карточки */
 .content__list {
   position: relative;
-  display: grid;
-  flex-direction: column; 
-  gap: 30px;
-  padding: 2px 3px 0;
-} 
+  display: flex;
+  flex-direction: column;
+}
 
 .content__list-item {
   gap: 26px;
-  
-}
-
-.content__card-link {
-  display: block;
-  margin-bottom: 30px;
-  color: #fff;
-  text-decoration: none;
 }
 
 .content__video-card {
@@ -122,14 +114,14 @@ ol {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 6px;
 }
 
 .content__video-card-title {
   overflow: hidden;
   color: #fff;
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
+  font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
   text-overflow: ellipsis;
@@ -137,10 +129,18 @@ ol {
 }
 
 .content__video-card-thumbnail {
+  display: block;
   width: 194px;
   height: 103px;
   object-fit: cover;
   object-position: center;
+}
+
+.content__video-card-description {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  line-clamp: 4;
 }
 
 .content__video-card-description-container {
@@ -149,15 +149,14 @@ ol {
 }
 /* Заголовок чекбоксов */
 .search-form__fieldset-title {
+  margin-bottom: 8.5px;
   font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
-  margin-bottom: 8.5px;
- 
 }
 /* Заголовок главный */
-.title  {
+.title {
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
@@ -165,21 +164,13 @@ ol {
   text-transform: uppercase;
 }
 /* ПО- в заголовке */
- .content__accent {
+.content__accent {
   color: #545050;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
-}
-
-.content__video-card-description {
-  font-family: Fira Sans Condensed, sans-serif;
-  font-size: 18px;
-  line-height: 16.2px;
-  text-overflow: ellipsis;
-  line-clamp: 4;
 }
 
 /* Кастомный скроллбар */
@@ -192,7 +183,7 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
 .visually-hidden {
@@ -212,36 +203,31 @@ ol {
 }
 
 .search-form__fieldset {
+  gap: 5px;
+
   border: none;
 }
 
 .search-form__pseudo-checkbox {
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: 1px solid #fff;
-  height: 19px;
+  align-items: center;
   width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
 }
 
 .search-form__pseudo-checkbox::after {
   content: "";
   display: none;
-  height: 15px;
   width: 15px;
-  background-color: #fff;
+  height: 15px;
   margin: 2px;
+  background-color: #fff;
 }
 
 input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   display: inline-block;
-}
-
-.search-form__label:hover {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  color: #fff;
-  cursor: pointer;
 }
 
 .search-form__label {
@@ -250,6 +236,13 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   align-items: center;
   gap: 5px;
   width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__label:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 5px;
   cursor: pointer;
 }
 
@@ -269,13 +262,13 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+  padding: 3.5px 2px;
   color: rgba(255, 255, 255, 0.7);
   font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size: 18px;
   background-color: transparent;
   appearance: none;
-  padding: 3.5px 2px;
 }
 
 .search-form__textfield:focus {
@@ -283,14 +276,14 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 /* кнопки */
 .button {
-  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
   font-family: Fira Sans Condensed, sans-serif;
-  font-size: 18px;
   font-weight: 700;
+  font-size: 18px;
   line-height: 100%;
   text-align: center;
-  color: #fff;
-  border: 1px solid #fff;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -313,16 +306,14 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .search-form__submit-button {
+  align-self: end;
   width: 194px;
   min-height: 34px;
-  align-self: end;
 }
 
 .more-button {
   width: 100%;
   min-height: 34px;
-  margin: 2px;
-  
 }
 
 .more-button:focus-visible {
@@ -330,8 +321,14 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   outline-offset: 1px;
 }
 /* карточки в разных состояниях */
-.content__card-link_current {
-  background-color: #545050;
+ .content__card-link_current {
+  background-color: #545050; 
+} 
+.content__card-link {
+  display: block;
+  margin-bottom: 30px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .content__card-link:hover {
@@ -339,8 +336,8 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .content__card-link:active {
-  background-color: #545050;
   outline: none;
+  background-color: #545050;
 }
 
 .content__card-link:focus {
