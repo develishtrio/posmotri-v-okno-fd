@@ -76,7 +76,7 @@ ol {
   justify-content: space-between;
   align-items: start;
 }
-
+/* карточки */
 .content__details {
   display: flex;
   flex-direction: column;
@@ -91,10 +91,8 @@ ol {
   gap: 30px;
   height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
 }
 
-/* карточки */
 .content__list {
   position: relative;
   display: flex;
@@ -136,7 +134,6 @@ ol {
 
 .content__video-card-thumbnail {
   display: block;
-  width: 194px;
   height: 103px;
   object-fit: cover;
   object-position: center;
