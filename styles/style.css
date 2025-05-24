@@ -91,6 +91,7 @@ ol {
   gap: 30px;
   height: 298px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* карточки */
@@ -99,11 +100,13 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-top: 1px;
 }
 
 .content__list-item {
   padding-left: 3px;
   padding-right: 3px; 
+  
 }
 
 .content__video-card {
@@ -148,6 +151,7 @@ ol {
     -webkit-line-clamp: 4;  
     -webkit-box-orient: vertical;  
     overflow: hidden;
+    
 }
 
 .content__video-card-description-container {
@@ -318,7 +322,9 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .more-button {
-  width: 100%;
+  width: calc(100%-6px);
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 /* карточки в разных состояниях */
