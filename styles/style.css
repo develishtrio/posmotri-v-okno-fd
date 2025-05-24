@@ -173,11 +173,6 @@ ol {
 /* ПО- в заголовке */
 .content__accent {
   color: #545050;
-  font-family: inherit;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  text-transform: inherit;
 }
 
 /* Кастомный скроллбар */
